@@ -32,6 +32,9 @@ A full-stack web application for tracking personal expenses, built with Django R
   python -m venv venv
   source venv/bin/activate     # Windows: venv\Scripts\activate
   pip install -r requirements.txt
+
+  echo "SECRET_KEY=$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')" > .env
+
   python manage.py migrate
   python manage.py createsuperuser  # Create admin user
   python manage.py runserver
